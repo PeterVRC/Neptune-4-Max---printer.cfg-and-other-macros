@@ -1,0 +1,15 @@
+Bed Dimensions:
+X0 - X415
+Y0 - Y424
+
+These are 'reduced' seeing the endstops are now -ve numbers. But the X0/Y0
+positions are set to be a few mm onto the Bed, and so are the X & Y Max
+values (a few mm over the bed).
+It makes more sense that the 'visible' bed runs from 0 - Max, and any
+positions off the bed are a -ve number.
+
+To set this up in Klipper, the printer.cfg has [stepper_ ] position_min and position_endstop both set to the the same negative number.
+The maximums in the printer.cfg are what the printer CAN move to, but in the
+slicer you limit those to only have maximums that remain over the printable
+bed
+.
