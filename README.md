@@ -14,3 +14,6 @@ The same is done for PRINT_END (END_PRINT), though I don't think that has the 'd
 My printer.cfg changes reasonably often. Sometimes tweaking values. Sometimes adding macros. Sometimes editing a prior added maco. So I will try to keep this updated, but for any given current working printer.cfg it should just keep working fine as it is anyway.
 
 If you have any issues using it, you can let me know and I can probably work out what is amiss in your setup.
+
+You need to set the SLICER up to suit the printer - such as the bed dimensions (new values used), and the Start and End G-Code scripts.
+There is a Slicer.txt file which lists the Slicer things required.
