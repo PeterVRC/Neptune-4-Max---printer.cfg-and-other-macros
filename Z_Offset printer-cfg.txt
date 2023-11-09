@@ -1,12 +1,23 @@
 The Z_Offset value in the printer.cfg is a value telling how high
-above the nozzle the Z Endstop, or probe, is.
-An Inductive Probe will always be HIGHER up than the nozzle, by a few millimetres. (eg maybe 2mm). Even on the same printer model this can be some small value different, due to mounting tolerances or adjustment.
+above the nozzle the Z Endstop, or Pprobe, is.
+An Inductive Probe will always be HIGHER up than the nozzle, by a 
+few millimetres. (eg maybe 2mm). This is so it is always above any 
+printing layer. Even on the same printer model this can be some 
+small value different, due to mounting tolerances or adjustment.
+In most Inductive Probe setups the Probe is also used as the Z Endstop.
+So once they Home the printer will know a certain Z_Stepper position 
+as what the Endstop was and then it will offset that by the "Z_Offset"
+value that is stored to work out the actual Nozzle height and what
+Z_Step position will then be Z=0.
 
-Z_Offset will always be a positive value.
+Z_Offset will always be a positive value (for an Inductive Probe).
 
-A higher value will cause the final calculated Z=0 position to be LOWER down.
+A higher value will cause the final calculated Z=0 position to 
+be LOWER down.
 
-The Z_Offset, once it has even been set, will be saved into the SAVE_CONFIG section at the very end of the printer.cfg file.
+
+The Z_Offset, once it has even been set, will be saved into the 
+SAVE_CONFIG section at the very end of the printer.cfg file.
 
 #*# [probe]
 #*# z_offset = 1.10
