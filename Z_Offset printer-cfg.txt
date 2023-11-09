@@ -1,0 +1,21 @@
+The Z_Offset value in the printer.cfg is a value telling how high
+above the nozzle the Z Endstop, or probe, is.
+An Inductive Probe will always be HIGHER up than the nozzle, by a few millimetres. (eg maybe 2mm). Even on the same printer model this can be some small value different, due to mounting tolerances or adjustment.
+
+Z_Offset will always be a positive value.
+
+A higher value will cause the final calculated Z=0 position to be LOWER down.
+
+The Z_Offset, once it has even been set, will be saved into the SAVE_CONFIG section at the very end of the printer.cfg file.
+
+#*# [probe]
+#*# z_offset = 1.10
+
+This section is not meant to be edited by users, but you CAN without issue - as long as you know what you are doing and don't mess things up in there!
+So you can edit the Z_Offset value directly if you want to - thus not needing to use any screen or Fluidd system, if they are flakey and unreliable for some reason.
+Best is to USE the screen to fine tune the Z_Offset when you print and note down the exact AMOUNT you altered it by - NOT the actual value it shows(!!) - then you can edit the SAVE_CONFIG section later. You can even edit and save it while it is printing, but you won't be able to restart Klipper to get it to use it until printing has finished.
+
+You will (might?) find that the value you have in the SAVE_CONFIG section is NOT the same as what you see in Fluidd or on the printer's Screen for Z_Offset. The Screen and Fluidd tend to be the same value, but not what the SAVE_CONFIG has. I am not sure why they are different. It suggests that the printer system uses some different place to save the Z_Offset (or whatever they chose to name it), though Klipper itself is who needs it for its calculations. The manufacturer COULD alter Klipper so it does this a different way, but why? And also, the SAVE_CONFIG section DOES get updated at least the first time a Z_Offset change is made on the printer Screen, or Fluidd. You can see that if you have the SAVE_CONFIG Z-Offset section removed, and it will be put back.
+The whole Z_Offset system/process, of the Elegoo system, seems unclear to work out what is truly going on with it all !
+
+
