@@ -1,5 +1,5 @@
 # Neptune-4-Max---printer.cfg-and-other-macros
-My Neptune 4 Max printer.cfg with many teaks/additions
+My Neptune 4 Max printer.cfg with many tweaks/additions
 There are quite a lot of comments etc to detail what is what. I keep everything inside the printer.cfg, with no external macro calls, so it is all self-contained.
 
 There MIGHT be some values you need to change to suit your N4max (eg sensorless homing sensitivity) but I think it would be pretty well right for any printer.
